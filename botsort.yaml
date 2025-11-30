@@ -1,0 +1,43 @@
+with_reid:
+  default: True
+
+track_high_thresh:
+  type: uniform
+  default: 0.6  # from the default parameters
+  range: [0.3, 0.7]
+
+track_low_thresh:
+  type: uniform
+  default: 0.1  # from the default parameters
+  range: [0.1, 0.3]
+
+new_track_thresh:
+  type: uniform
+  default: 0.7  # from the default parameters
+  range: [0.5, 0.8]
+
+# Keep memory ~2 seconds at 30 FPS
+track_buffer:
+  type: randint
+  default: 600   # was 4000
+  range: [30, 600]
+
+match_thresh:
+  type: uniform
+  default: 0.7  # from the default parameters
+  range: [0.5, 0.9]
+
+proximity_thresh:
+  type: uniform
+  default: 0.5  # from the default parameters
+  range: [0.25, 0.75]
+
+appearance_thresh:
+  type: uniform
+  default: 0.3  # from the default parameters
+  range: [0.3, 0.6]
+
+cmc_method:
+  type: choice
+  default: ecc  # from the default parameters
+  options: [sof, ecc]
